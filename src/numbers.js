@@ -1,8 +1,8 @@
 import './App.css'
-
-function Numbers(){
+import { useState } from 'react'
+function Numbers({handleClick, result, clear, calculate}){
     const numbers = [
-        { numbers: 'AC', id: '', className: 'ac' },
+        { numbers: 'AC', id: 'clear', className: 'ac' },
         { numbers: '/', id: '/', className: 'slash' },
         { numbers: 'x', id: '*', className: 'multiply' },
         { numbers: '1', id: '1', className: 'number1' },
@@ -18,20 +18,24 @@ function Numbers(){
         { numbers: '0', id: '0', className: 'number0' },
         { numbers: '-', id: '-', className: 'minus' },
         { numbers: '.', id: '.', className: 'dot' },
-        { numbers: '=', id: '=', className: 'equals' }
+        { numbers: '=', id: 'calculate', className: 'equals' }
     ]
 
+
+    
     return(
         <div className='cal-body'>
           <input 
-          type='text' 
-          readOnly/>
+          type='text'  readOnly value={result}/>
+
 <div className='numbers-grid'>
 {numbers.map(number => (
 <button id='number' 
 value={number.numbers} 
 key={number.id}
-className= {`${number.className}`}> {number.numbers} </button>
+className= {`${number.className}`} onClick={
+    number.id === 'clear' ? clear : handleClick
+  }> {number.numbers} </button>
 ))}
 </div>
 </div>
