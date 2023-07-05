@@ -1,5 +1,3 @@
-Here is a sample README for your calculator app:
-
 # React Calculator
 
 This is a simple calculator app built using React.js.
