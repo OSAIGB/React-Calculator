@@ -1,30 +1,53 @@
+
+*{
+  box-sizing: border-box;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 auto;
+}
+
 .cal-body {
   display: grid;
   grid-gap: 10px;
-  max-width: 300px;
+background-color: white;
 }
+.output-field{
+  display: flex;
+  flex-direction: column;
+  border: black;
 
-.numbers-grid {
-  display: grid;
-  grid-gap: 10px;
 }
-
+.result{
+  border-top: none;
+  font-size: 30px;
+  background-color:  #F2F2F2;
+}
+.input-field{
+  border-bottom: none;
+  height: 40px;
+  font-size: 15px;
+  background-color:  #F2F2F2;
+}
 .number {
   background-color: lightblue;
   padding: 10px;
   text-align: center;
 }
-.cal-body {
-  display: grid;
-  grid-gap: 10px;
-  max-width: 300px;
+#number{
+  height: 60px;
 }
-
 .numbers-grid {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 0.9px;
+  background-color:#2F80ED;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  width: 400px;
 }
 
 .number {
@@ -44,22 +67,22 @@
 }
 
 .multiply {
-  grid-column: 1;
+  grid-column: 4;
   grid-row: 2;
 }
 
 .number1 {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
 }
 
 .number2 {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 2;
 }
 
 .number3 {
-  grid-column: 4;
+  grid-column: 3;
   grid-row: 2;
 }
 
@@ -79,18 +102,18 @@
 }
 
 .number7 {
-  grid-column: 4;
-  grid-row: 3;
-}
-
-.number8 {
   grid-column: 1;
   grid-row: 4;
 }
 
-.plus {
+.number8 {
   grid-column: 2;
   grid-row: 4;
+}
+
+.plus {
+  grid-column: 4;
+  grid-row: 3;
 }
 
 .number9 {
@@ -105,13 +128,13 @@
 }
 
 .minus {
-  grid-column: 3;
-  grid-row: 5;
+  grid-column: 4;
+  grid-row: 4;
 }
 
 .dot {
-  grid-column: 4;
-  grid-row: 4;
+  grid-column: 3;
+  grid-row: 5;
 }
 
 .equals {
@@ -120,8 +143,33 @@
 }
 
 #number {
-  background-color: black;
+  background-color: #27AE60;
   padding: 10px;
   text-align: center;
   color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+@media screen and (max-width: 600px){
+.numbers-grid{
+  width: 337px;
+}
+.output-field{
+  width: 337px;
+}
+}
+.button-color{
+ background-color: #F2F2F2; 
+}
+.clicked {
+  animation: change-background 0.2s linear;
+}
+
+@keyframes change-background {
+  from {
+    background-color: #27AE60;
+  }
+  to {
+    background-color: #F2F2F2;
+  }
 }
